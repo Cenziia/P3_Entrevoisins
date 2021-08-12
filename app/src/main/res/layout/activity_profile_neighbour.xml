@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/neighbour_page_img"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/neighbour_picture"/>
+
+        <TextView
+            android:id="@+id/neighbour_page_title_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="-65dp"
+            android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/neighbour_page_fav_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="27dp"
+            android:backgroundTint="#E2E2E2" />
+
+        <ImageButton
+            android:id="@+id/neighbour_page_back_btn"
+            android:contentDescription="@string/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-300dp"
+            android:background="#00FFFFFF"
+            android:scaleX="1.3"
+            android:scaleY="1.3" />
+</LinearLayout>
+
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/neighbour_page_name_txt"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:height="25dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/neighbour_page_address_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/neighbour_page_phone_txt"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:height="20dp"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/neighbour_page_link_txt"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:height="20dp"
+                android:layout_marginTop="25dp"/>
+
+</android.support.v7.widget.CardView>
+
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+            <TextView
+                android:text="@string/about_me"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_margin="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/neighbour_page_about_me_txt"
+                android:layout_marginTop="-10dp"
+                android:layout_marginStart="20dp"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content" />
+
+</android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>

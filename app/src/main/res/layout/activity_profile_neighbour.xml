@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-<LinearLayout
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/neighbour_page_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <ImageView
-            android:id="@+id/neighbour_page_img"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/neighbour_picture"/>
 
         <TextView
             android:id="@+id/neighbour_page_title_name_txt"
@@ -22,6 +14,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img"
+            app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
             android:layout_marginTop="-65dp"
             android:textSize="34sp" />
 
@@ -32,7 +26,8 @@
             android:layout_gravity="end"
             android:layout_marginTop="-2dp"
             android:layout_marginEnd="27dp"
-            android:backgroundTint="#E2E2E2" />
+            android:backgroundTint="#E2E2E2"
+            app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img"/>
 
         <ImageButton
             android:id="@+id/neighbour_page_back_btn"
@@ -43,12 +38,24 @@
             android:layout_marginTop="-300dp"
             android:background="#00FFFFFF"
             android:scaleX="1.3"
-            android:scaleY="1.3" />
-</LinearLayout>
+            android:scaleY="1.3"
+            app:layout_constraintTop_toTopOf="@id/neighbour_page_img"
+            app:layout_constraintStart_toStartOf="@id/neighbour_page_img"/>
+
+        <ImageView
+            android:id="@+id/neighbour_page_img"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/neighbour_picture"
+            app:layout_constraintTop_toTopOf="parent"/>
+
 
 <android.support.v7.widget.CardView
+    android:id="@+id/neighbour_page_details_card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img">
 
             <TextView
                 android:id="@+id/neighbour_page_name_txt"
@@ -59,6 +66,12 @@
                 android:height="25dp"
                 android:background="@drawable/border"
                 android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="120dp"
+                android:background="@drawable/border"/>
 
             <TextView
                 android:id="@+id/neighbour_page_address_txt"
@@ -88,10 +101,14 @@
 </android.support.v7.widget.CardView>
 
 <android.support.v7.widget.CardView
+    android:id="@+id/neighbour_page_about_me_card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/neighbour_page_details_card_view"
+    android:layout_marginHorizontal="10dp">
 
             <TextView
+                android:id="@+id/neighbour_page_about_me_title_txt"
                 android:text="@string/about_me"
                 android:textStyle="bold"
                 android:textSize="20sp"
@@ -113,6 +130,5 @@
                 android:layout_height="wrap_content" />
 
 </android.support.v7.widget.CardView>
-
 
 </android.support.constraint.ConstraintLayout>

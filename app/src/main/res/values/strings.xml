@@ -7,4 +7,8 @@
     <string name="about_me">A propos de moi</string>
     <string name="back_button">Back button</string>
     <string name="neighbour_picture">Neighbour\'s picture</string>
+    <string name="location_icone">location_icone</string>
+    <string name="location_icon">location_icon</string>
+    <string name="phone_icon">phone_icon</string>
+    <string name="link_icon">link_icon</string>
 </resources>

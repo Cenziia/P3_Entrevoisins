@@ -1,133 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/neighbour_page_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-        <TextView
-            android:id="@+id/neighbour_page_title_name_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img"
-            app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
-            android:layout_marginTop="-65dp"
-            android:textSize="34sp" />
-
-        <Button
-            android:id="@+id/neighbour_page_fav_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="-2dp"
-            android:layout_marginEnd="27dp"
-            android:backgroundTint="#E2E2E2"
-            app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img"/>
+        <ImageView
+        android:id="@+id/neighbour_page_img"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/neighbour_picture"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/image_test"/>
 
         <ImageButton
             android:id="@+id/neighbour_page_back_btn"
-            android:contentDescription="@string/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="-300dp"
+            android:layout_marginTop="20dp"
             android:background="#00FFFFFF"
+            android:contentDescription="@string/back_button"
             android:scaleX="1.3"
             android:scaleY="1.3"
-            app:layout_constraintTop_toTopOf="@id/neighbour_page_img"
-            app:layout_constraintStart_toStartOf="@id/neighbour_page_img"/>
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
+            app:layout_constraintTop_toTopOf="@id/neighbour_page_img" />
 
-        <ImageView
-            android:id="@+id/neighbour_page_img"
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/neighbour_page_fav_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="27dp"
+        android:backgroundTint="@android:color/white"
+        android:scaleX="1.05"
+        android:scaleY="1.05"
+        app:backgroundTint="#E1E1E1"
+        app:layout_constraintEnd_toEndOf="@id/neighbour_page_img"
+        app:layout_constraintTop_toBottomOf="@id/neighbour_page_title_name_txt"
+        app:maxImageSize="25dp"
+        tools:src="@drawable/ic_outline_star_border_24" />
+
+
+        <TextView
+        android:id="@+id/neighbour_page_title_name_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img"
+        app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
+        android:layout_marginBottom="25dp"
+        android:textSize="34sp"
+        tools:text="Caroline"/>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/neighbour_page_details_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintBottom_toTopOf="@id/neighbour_page_about_me_card_view"
+        app:layout_constraintTop_toBottomOf="@+id/neighbour_page_img">
+
+        <TextView
+            android:id="@+id/neighbour_page_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="17dp"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            tools:text="Caroline" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/neighbour_picture"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:paddingTop="105dp" />
 
-
-<android.support.v7.widget.CardView
-    android:id="@+id/neighbour_page_details_card_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_constraintBottom_toBottomOf="@id/neighbour_page_img">
-
-            <TextView
-                android:id="@+id/neighbour_page_name_txt"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:height="25dp"
-                android:background="@drawable/border"
-                android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="66dp"
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/neighbour_page_address_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="120dp"
-                android:background="@drawable/border"/>
+                android:orientation="horizontal"
+                android:paddingStart="15dp">
 
-            <TextView
-                android:id="@+id/neighbour_page_address_txt"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/neighbour_page_address_ic"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/location_icon"
+                    android:src="@drawable/ic_baseline_location_on_24" />
+
+                <TextView
+                    android:id="@+id/neighbour_page_address_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:textSize="15sp"
+                    tools:text="address" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/neighbour_page_phone_linear_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:paddingStart="15dp">
 
-            <TextView
-                android:id="@+id/neighbour_page_phone_txt"
-                android:textSize="15sp"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/neighbour_page_phone_ic"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/phone_icon"
+                    android:src="@drawable/ic_baseline_phone_24" />
+
+                <TextView
+                    android:id="@+id/neighbour_page_phone_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:textSize="15sp"
+                    tools:text="phone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/neighbour_page_link_linear_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:height="20dp"
-                android:layout_marginTop="25dp"/>
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal"
+                android:paddingStart="15dp">
 
-            <TextView
-                android:id="@+id/neighbour_page_link_txt"
-                android:textSize="15sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:height="20dp"
-                android:layout_marginTop="25dp"/>
+                <ImageView
+                    android:id="@+id/neighbour_page_link_ic"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/link_icon"
+                    android:src="@drawable/ic_baseline_language_24" />
 
-</android.support.v7.widget.CardView>
+                <TextView
+                    android:id="@+id/neighbour_page_link_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:textSize="15sp"
+                    tools:text="link" />
 
-<android.support.v7.widget.CardView
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
     android:id="@+id/neighbour_page_about_me_card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     app:layout_constraintTop_toBottomOf="@id/neighbour_page_details_card_view"
-    android:layout_marginHorizontal="10dp">
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginHorizontal="12dp">
 
             <TextView
                 android:id="@+id/neighbour_page_about_me_title_txt"
                 android:text="@string/about_me"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_margin="20dp"
+                android:textSize="23sp"
+                android:layout_margin="17dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="120dp"
+        android:paddingTop="105dp"
         android:background="@drawable/border"/>
 
             <TextView
                 android:id="@+id/neighbour_page_about_me_txt"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginStart="20dp"
                 android:layout_width="280dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:text="@tools:sample/lorem[25]" />
 
 </android.support.v7.widget.CardView>
 

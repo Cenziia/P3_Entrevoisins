@@ -10,7 +10,7 @@
         <ImageView
         android:id="@+id/neighbour_page_img"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="270dp"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
@@ -201,7 +201,7 @@
                 android:id="@+id/neighbour_page_about_me_txt"
                 android:layout_marginTop="60dp"
                 android:layout_marginStart="20dp"
-                android:layout_width="280dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="@tools:sample/lorem[25]" />
 

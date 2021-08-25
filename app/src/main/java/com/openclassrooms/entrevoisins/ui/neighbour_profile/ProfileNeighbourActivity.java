@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,11 +50,7 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_neighbour);
         ButterKnife.bind(this);
         mApiService = DI.getNeighbourApiService();
-        //int poop = getIntent().getIntExtra("neighbourID", 0);
-        //long poop = getIntent().getLongExtra("neighbourID", -1);
-        //neighbour.setId(poop);
-        //String NAME = getIntent().getDataString();
-        //GetNeighbour();
+
         Intent intent =getIntent();
         Neighbour neighbour = (Neighbour) intent.getParcelableExtra("neighbour");
 
@@ -68,6 +65,13 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         mPhoneTxt.setText(neighbour.getPhoneNumber());
         mAboutMeTxt.setText(neighbour.getAboutMe());
         mLinkTxt.setText("https://www.facebook.com/" + neighbour.getName());
+
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         setFavoriteImage(neighbour);
 

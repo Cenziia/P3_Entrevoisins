@@ -23,6 +23,12 @@ public interface NeighbourApiService {
     void deleteNeighbour(Neighbour neighbour);
 
     /**
+     * Gets a neighbour
+     * @param neighbour
+     */
+    //void getNeighbourProfile(Neighbour neighbour);
+
+    /**
      * Create a neighbour
      * @param neighbour
      */

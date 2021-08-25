@@ -33,6 +33,16 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      * {@inheritDoc}
      * @param neighbour
      */
+   /* @Override
+    public void getNeighbourProfile(Neighbour neighbour) {
+        neighbours.get(neighbours.indexOf(neighbour));
+    }*/
+
+    /**
+     * {@inheritDoc}
+     *
+     * @param neighbour
+     */
     @Override
     public void createNeighbour(Neighbour neighbour) {
         neighbours.add(neighbour);
@@ -40,6 +50,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     /**
      * {@inheritDoc}
+     *
      * @param neighbour
      */
     @Override
@@ -63,6 +74,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     /**
      * {@inheritDoc}
+     *
      * @param neighbour
      */
     @Override
@@ -70,15 +82,4 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbour.setFavorite(false);
     }
 
-    @Override
-    public Neighbour getNeighbour(long id) {
-        Neighbour neighbour = null;
-        for(Neighbour i : neighbours) {
-            if(i.getId() == id){
-                neighbour = i;
-                break;
-            }
-        }
-        return neighbour;
-    }
 }

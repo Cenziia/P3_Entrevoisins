@@ -1,6 +1,7 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.openclassrooms.entrevoisins.ui.neighbour_profile.ProfileNeighbourActi
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.Serializable;
 import java.util.List;
 
 import butterknife.BindView;
@@ -54,12 +56,19 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             }
 
         });
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ProfileNeighbourActivity.class);
+                //intent.putExtra("ID", neighbour.getId());
+               intent.putExtra("neighbour", (Parcelable) neighbour);
+                /*neighbour.getId*/
+                //Long id = neighbour.getId();
+                //intent.putExtra("neighbourId", id);
+                //intent.putExtra("NAME", neighbour.getName());
                 v.getContext().startActivity(intent);
+
+
             }
         });
     }
@@ -70,6 +79,10 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         return mNeighbours.size();
     }
 
+    /*@Override
+    public long getItemId(int position) {
+        return Neighbour.getId();
+    }*/
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {

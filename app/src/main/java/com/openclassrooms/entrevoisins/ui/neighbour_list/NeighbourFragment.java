@@ -90,4 +90,10 @@ public class NeighbourFragment extends Fragment {
         mApiService.deleteNeighbour(event.neighbour);
         initList();
     }
+
+    /*@Subscribe
+    public void onGetNeighbourProfile(GetNeighbourProfileEvent event) {
+        //mApiService.getNeighbourProfile(event.neighbour);
+        new MyNeighbourRecyclerViewAdapter.GetNeighbourProfile(event);
+    }*/
 }

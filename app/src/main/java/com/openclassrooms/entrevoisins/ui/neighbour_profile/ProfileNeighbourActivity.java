@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
@@ -44,7 +42,6 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
     public TextView mAboutMeTxt;
 
     private NeighbourApiService mApiService;
-    private Neighbour neighbour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +49,13 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_neighbour);
         ButterKnife.bind(this);
         mApiService = DI.getNeighbourApiService();
+        //int poop = getIntent().getIntExtra("neighbourID", 0);
+        //long poop = getIntent().getLongExtra("neighbourID", -1);
+        //neighbour.setId(poop);
+        //String NAME = getIntent().getDataString();
+        //GetNeighbour();
+        Intent intent =getIntent();
+        Neighbour neighbour = (Neighbour) intent.getParcelableExtra("neighbour");
 
         Glide.with(mImage.getContext())
                 .load(getDrawable(R.drawable.image_test))
@@ -65,7 +69,7 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         mAboutMeTxt.setText(neighbour.getAboutMe());
         mLinkTxt.setText("https://www.facebook.com/" + neighbour.getName());
 
-        setFavoriteImage(neighbour);
+        //setFavoriteImage(neighbour);
 
     }
 
@@ -77,5 +81,6 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
             mFavBtn.setImageDrawable(getResources().getDrawable(R.drawable.ic_outline_star_border_24));
         }
     }
+
 
 }

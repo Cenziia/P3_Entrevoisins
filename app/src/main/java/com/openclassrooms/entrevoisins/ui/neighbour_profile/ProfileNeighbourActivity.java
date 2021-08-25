@@ -58,7 +58,7 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         Neighbour neighbour = (Neighbour) intent.getParcelableExtra("neighbour");
 
         Glide.with(mImage.getContext())
-                .load(getDrawable(R.drawable.image_test))
+                .load(neighbour.getAvatarUrl())
                 .centerCrop()
                 .into(mImage);
 
@@ -69,7 +69,7 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         mAboutMeTxt.setText(neighbour.getAboutMe());
         mLinkTxt.setText("https://www.facebook.com/" + neighbour.getName());
 
-        //setFavoriteImage(neighbour);
+        setFavoriteImage(neighbour);
 
     }
 

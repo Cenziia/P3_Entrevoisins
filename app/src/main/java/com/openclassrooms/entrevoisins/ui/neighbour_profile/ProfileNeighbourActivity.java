@@ -1,9 +1,11 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_profile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -43,6 +45,17 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
     public TextView mAboutMeTxt;
 
     private NeighbourApiService mApiService;
+    private static String NEIGHBOUR_STRING = "neighbour";
+    private static String TAG = ProfileNeighbourActivity.class.getSimpleName();
+
+    public static  Intent newInstance(final Context context, final Neighbour neighbour) {
+        Log.d(TAG, "> newInstance");
+        Intent intent = new Intent(context, ProfileNeighbourActivity.class);
+        Log.d(TAG, "neighbour: " + neighbour);
+        intent.putExtra(NEIGHBOUR_STRING, neighbour);
+        Log.d(TAG, "< newInstance");
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +63,9 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_neighbour);
         ButterKnife.bind(this);
         mApiService = DI.getNeighbourApiService();
-
+        //neighbour = mApiService.getNeighbours().get(0);
         Intent intent =getIntent();
-        Neighbour neighbour = (Neighbour) intent.getParcelableExtra("neighbour");
+        Neighbour neighbour = (Neighbour) intent.getParcelableExtra(NEIGHBOUR_STRING);
 
         Glide.with(mImage.getContext())
                 .load(neighbour.getAvatarUrl())

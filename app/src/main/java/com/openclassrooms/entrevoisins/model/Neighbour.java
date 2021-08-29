@@ -46,7 +46,7 @@ public class Neighbour implements Parcelable {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.aboutMe = aboutMe;
-        this.favorite = true;
+        this.favorite = false;
     }
 
     protected Neighbour(Parcel in) {

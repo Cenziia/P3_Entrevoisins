@@ -79,6 +79,8 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         mAboutMeTxt.setText(neighbour.getAboutMe());
         mLinkTxt.setText("https://www.facebook.com/" + neighbour.getName());
 
+        setFavoriteImage(neighbour);
+
         mBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +88,24 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
             }
         });
 
-        setFavoriteImage(neighbour);
+        mFavBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*if (neighbour.getFavorite() == false)
+                    mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
+                    mApiService.addFavoriteNeighbour(neighbour);*/
+                setFavoriteTrue(neighbour);
+            }
+        });
+
+       /* mFavBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (neighbour.getFavorite() == false) {
+                    mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_border_24));
+                }
+            }
+        });*/
 
     }
 
@@ -99,5 +118,17 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         }
     }
 
+    public void setFavoriteTrue(Neighbour neighbour) {
+        //return neighbour.getFavorite() == true;
+        if (neighbour.getFavorite() == false) {
+            mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
+            //return neighbour.getFavorite() == true;
+            mApiService.addFavoriteNeighbour(neighbour);
+        } else if (neighbour.getFavorite() == true) {
+            mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_border_24));
+            //return neighbour.getFavorite() == false;
+            mApiService.removeFavoriteNeighbour(neighbour);
+        }
+    }
 
 }

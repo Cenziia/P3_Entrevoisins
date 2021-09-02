@@ -46,7 +46,7 @@ public class Neighbour implements Parcelable {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.aboutMe = aboutMe;
-        this.favorite = false;
+        this.favorite = favorite;
     }
 
     protected Neighbour(Parcel in) {
@@ -119,9 +119,9 @@ public class Neighbour implements Parcelable {
         this.aboutMe = aboutMe;
     }
 
-    public Boolean getFavorite() {return favorite; }
+    public boolean getFavorite() {return this.favorite; }
 
-    public void setFavorite(Boolean favorite) {this.favorite = favorite; }
+    public void setFavorite(boolean favorite) {this.favorite = favorite; }
 
     @Override
     public boolean equals(Object o) {
@@ -154,6 +154,14 @@ public class Neighbour implements Parcelable {
 
     @Override
     public String toString() {
-        return "id:" + id + "/name: " + name + "/favorites: " + favorite;
+        return "Neighbour{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", aboutMe='" + aboutMe + '\'' +
+                ", favorite=" + favorite +
+                '}';
     }
 }

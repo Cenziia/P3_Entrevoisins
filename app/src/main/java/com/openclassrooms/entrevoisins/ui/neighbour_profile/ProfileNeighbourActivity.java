@@ -94,10 +94,10 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
                 /*if (neighbour.getFavorite() == false)
                     mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
                     mApiService.addFavoriteNeighbour(neighbour);*/
-                setFavoriteTrue(neighbour);
+                changeFavorite(neighbour);
             }
-        });
 
+        });
        /* mFavBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,17 +118,26 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         }
     }
 
-    public void setFavoriteTrue(Neighbour neighbour) {
+    public void changeFavorite(Neighbour neighbour) {
         //return neighbour.getFavorite() == true;
         if (neighbour.getFavorite() == false) {
             mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
             //return neighbour.getFavorite() == true;
-            mApiService.addFavoriteNeighbour(neighbour);
-        } else if (neighbour.getFavorite() == true) {
+            neighbour.setFavorite(true);
+
+        } else {
             mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_border_24));
             //return neighbour.getFavorite() == false;
-            mApiService.removeFavoriteNeighbour(neighbour);
+            neighbour.setFavorite(false);
+           // mApiService.changeFavoriteNeighbour(neighbour);
         }
+        //neighbour.setFavorite(true);
+        mApiService.updateNeighbour(neighbour);
+
+       System.out.println(mApiService.getFavoriteNeighbours());
+//System.out.println(mApiService.getNeighbours());
+       // System.out.println(mApiService.getFavoriteNeighbours());
+        //System.out.println(neighbour.getFavorite());
     }
 
 }

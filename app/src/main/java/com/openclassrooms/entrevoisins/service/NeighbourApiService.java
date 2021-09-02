@@ -38,7 +38,7 @@ public interface NeighbourApiService {
      * Add a neighbour to my Favorites
      * @param neighbour
      */
-    void addFavoriteNeighbour(Neighbour neighbour);
+   // void addFavoriteNeighbour(Neighbour neighbour);
 
     /**
      * Get all my Favorite Neighbours
@@ -50,7 +50,13 @@ public interface NeighbourApiService {
      * Remove a neighbour from my Favorites
      * @param neighbour
      */
-    void removeFavoriteNeighbour(Neighbour neighbour);
+   // void removeFavoriteNeighbour(Neighbour neighbour);
 
+    /**
+     *
+     * @param neighbour
+     */
+    //void changeFavoriteNeighbour(Neighbour neighbour);
+    void updateNeighbour(Neighbour neighbour);
 
 }

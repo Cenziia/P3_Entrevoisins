@@ -2,6 +2,7 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TabItem;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +20,10 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
 
 
 public class NeighbourFragment extends Fragment {
@@ -27,6 +31,11 @@ public class NeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
+    private List<Neighbour> mFavorites;
+   /* @BindView(R.id.tabItem)
+    TabItem neighbourTab;
+    @BindView(R.id.tabItem2)
+    TabItem favoritesTab;*/
 
 
     /**
@@ -59,10 +68,41 @@ public class NeighbourFragment extends Fragment {
      * Init the List of neighbours
      */
     private void initList() {
+        //if () {
         mNeighbours = mApiService.getNeighbours();
-        //mFavorites = mApiService.getFavoriteNeighbours();
+
+        /*neighbourTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNeighbours = mApiService.getNeighbours();
+               // mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+            }
+        });
+
+        favoritesTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNeighbours = mApiService.getFavoriteNeighbours();
+                mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+            }
+        });
+
+        //}
+        //else if () {
+           //mNeighbours = mApiService.getFavoriteNeighbours();
+        //}*/
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
-    }
+
+           /* for (Neighbour i : mNeighbours) {
+                if (i.getFavorite()) {
+                    System.out.println(i.getFavorite());
+                    favoriteNeighbourList.add(i);
+                }
+            }
+            System.out.println(mNeighbours);
+            return favoriteNeighbourList;*/
+        }
+
 
     @Override
     public void onResume() {
@@ -96,5 +136,11 @@ public class NeighbourFragment extends Fragment {
     public void onGetNeighbourProfile(GetNeighbourProfileEvent event) {
         //mApiService.getNeighbourProfile(event.neighbour);
         new MyNeighbourRecyclerViewAdapter.GetNeighbourProfile(event);
+    }*/
+
+    /*@Subscribe
+    public void onSetFavoritesList(SetFavoritesList event) {
+        mApiService.getFavoriteNeighbours();
+        initList();
     }*/
 }

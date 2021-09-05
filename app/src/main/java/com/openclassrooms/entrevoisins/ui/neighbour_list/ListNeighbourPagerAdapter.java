@@ -6,9 +6,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 
 public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
+int tabsCount;
 
-    public ListNeighbourPagerAdapter(FragmentManager fm) {
+    public ListNeighbourPagerAdapter(FragmentManager fm, int TabsCount) {
         super(fm);
+        this.tabsCount = TabsCount;
     }
 
     /**
@@ -18,7 +20,18 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-        return NeighbourFragment.newInstance();
+        switch (position) {
+            case 0:
+                System.out.println("Fragment Neighbour OK");
+                return NeighbourFragment.newInstance();
+            case 1:
+                System.out.println("Fragment Favorite OK");
+                return FavoriteFragment.newInstance();
+            default:
+                System.out.println("Fragment null");
+                return null;
+        }
+        //return NeighbourFragment.newInstance();
     }
 
     /**
@@ -27,6 +40,6 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
      */
     @Override
     public int getCount() {
-        return 1;
+        return tabsCount;
     }
 }

@@ -58,7 +58,7 @@ public class ListNeighbourActivity extends AppCompatActivity {
 
 
         setSupportActionBar(mToolbar);
-        mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
+        mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager(), mTabLayout.getTabCount());
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
@@ -77,7 +77,7 @@ public class ListNeighbourActivity extends AppCompatActivity {
                     //mApiService.getNeighbours();
                     System.out.println("Liste des voisins");
                 }
-                mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+                //mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
                 System.out.println("YEEEES");
                 System.out.println(mTabLayout.getSelectedTabPosition());
             }

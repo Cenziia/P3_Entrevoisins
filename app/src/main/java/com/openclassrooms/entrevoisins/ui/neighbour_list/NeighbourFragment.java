@@ -3,13 +3,16 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.SupportActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
@@ -31,12 +34,14 @@ public class NeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
-    private List<Neighbour> mFavorites;
+    //private List<Neighbour> mFavorites;
    /* @BindView(R.id.tabItem)
     TabItem neighbourTab;
     @BindView(R.id.tabItem2)
-    TabItem favoritesTab;*/
-
+    TabItem favoritesTab;
+    //TabItem mTabItem = getId()findViewById(R.id.tabItem);
+    @BindView(R.id.tabs)
+    TabLayout mTabLayout;
 
     /**
      * Create and return a new instance
@@ -62,30 +67,57 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         return view;
+
+
+/*
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                mViewPager.setCurrentItem(tab.getPosition());
+                if (mTabLayout.getSelectedTabPosition() == 1) {
+                    //mNeighbours = mApiService.getFavoriteNeighbours();
+                    System.out.println("Liste des favoris");
+                } else {
+                    //mNeighbours = mApiService.getNeighbours();
+                    System.out.println("Liste des voisins");
+                }
+                mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+                System.out.println("YEEEES");
+                System.out.println(mTabLayout.getSelectedTabPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+    }*/
     }
+
+
 
     /**
      * Init the List of neighbours
      */
     private void initList() {
+
+        /*if () {
+            //(R.id.tabItem)
+            mNeighbours = mApiService.getNeighbours();
+        } else if (getView().findViewById(R.id.tabItem2)) {
+            mNeighbours = mApiService.getFavoriteNeighbours();
+        }*/
+
         //if () {
-        mNeighbours = mApiService.getNeighbours();
 
-        /*neighbourTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mNeighbours = mApiService.getNeighbours();
-               // mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
-            }
-        });
+       mNeighbours = mApiService.getNeighbours();
 
-        favoritesTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mNeighbours = mApiService.getFavoriteNeighbours();
-                mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
-            }
-        });
 
         //}
         //else if () {
@@ -143,4 +175,5 @@ public class NeighbourFragment extends Fragment {
         mApiService.getFavoriteNeighbours();
         initList();
     }*/
+
 }

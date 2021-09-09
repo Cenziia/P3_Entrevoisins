@@ -47,7 +47,7 @@ public class NeighbourFragment extends Fragment {
      * Create and return a new instance
      * @return @{@link NeighbourFragment}
      */
-    public static NeighbourFragment newInstance() {
+    public static NeighbourFragment newInstance() { //String section = variable qui va identifier l'onglet qui a été cliqué
         NeighbourFragment fragment = new NeighbourFragment();
         return fragment;
     }

@@ -11,7 +11,7 @@ Entrevoisins est une application qui permet à des personnes d’un même quarti
 
 Vous pouvez cloner directement le projet via votre terminal avec cette commande :
 
-```` git clone git@github.com:Cenziia/P3_Entrevoisins.git ````
+```` git clone https://github.com/Cenziia/P3_Entrevoisins ````
 
 Sinon, vous pouvez le télécharger sur Github :
 
@@ -28,6 +28,14 @@ Si vous avez téléchargé le dossier ZIP, il vous faudra extraire son contenu.
 
 Après avoir ouvert Android Studio, cliquez sur **"File"** > **"Open"**, ou **"File"** > **"New"** > **"Import"**, puis sélectionnez le dossier.
 
+![add_to_android_studio](/images/add_to_android_studio.png)
 
+## Compiler
 
+Choisissez votre émulateur (**1**), puis cliquez sur **"Run"** (**2**).
 
+![run](/images/run.png)
+
+##### Et voilà, l'application est lancée !
+
+![project](/images/project.PNG)

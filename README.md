@@ -20,7 +20,7 @@ Lien du projet : **[https://github.com/Cenziia/P3_Entrevoisins](https://github.c
 - Cliquez sur le bouton **"Code"**
 - Cliquez sur **"Download ZIP"**
 
-[download_clone_repository.png](/images/download_clone_repository.png)
+![download_clone_repository.png](/images/download_clone_repository.png)
 
 Si vous avez téléchargé le dossier ZIP, il vous faudra extraire son contenu.
 

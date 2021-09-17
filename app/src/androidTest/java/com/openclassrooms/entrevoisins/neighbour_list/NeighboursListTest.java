@@ -6,6 +6,7 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
@@ -13,6 +14,7 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import com.openclassrooms.entrevoisins.utils.DeleteViewAction;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -21,7 +23,6 @@ import org.junit.runner.RunWith;
 import java.util.List;
 
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -32,7 +33,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.core.IsNull.notNullValue;
-
 
 
 /**
@@ -94,9 +94,9 @@ public class NeighboursListTest {
         // Le test récupère la liste des voisins
         //neighboursList = mApiService.getNeighbours();
         // Le test clique sur un élément en position 3
-        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT))
+        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
-        System.out.println(withItemCount(ITEMS_COUNT-11));
+        //System.out.println(withItemCount(ITEMS_COUNT-11));
         // Puis il vérifie qu'un nom est affiché dans le profil (via l'id)
         // Cela confirme l'ouverture de la page de détails
         onView(withId(R.id.neighbour_page_name_txt)).check(matches(isDisplayed()));
@@ -110,13 +110,13 @@ public class NeighboursListTest {
     @Test
     public void myNeighbourList_toNeighbourProfileActivity_shouldCheckIfSameName() {
         // Le test récupère la position de l'élément sélectionné
-        Neighbour neighbour = neighboursList.get(3);
+        //Neighbour neighbour = neighboursList.get(3);
         // Le test clique sur un élément
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3 , click()));
         // Puis il vérifie qu'un nom est affiché dans le profil (via l'id)
         // Cela confirme l'ouverture de la page de détails
-        onView(withId(R.id.neighbour_page_name_txt)).check(matches(withText(neighbour.getName())));
+        onView(withId(R.id.neighbour_page_name_txt)).check(matches(withText(mApiService.getNeighbours().get(3).getName())));
     }
 
     /**

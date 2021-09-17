@@ -50,7 +50,7 @@ public class NeighboursListTest {
 
     @Rule
     public ActivityTestRule<ListNeighbourActivity> mActivityRule =
-            new ActivityTestRule(ListNeighbourActivity.class);
+            new ActivityTestRule(ListNeighbourActivity.class, false, true);
 
     @Before
     public void setUp() {
@@ -91,6 +91,7 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighbourList_clickOnNeighbourAction_shouldOpenNeighbourProfileActivity() {
+        // GIVEN - WHEN - THEN à noter
         // Le test récupère la liste des voisins
         //neighboursList = mApiService.getNeighbours();
         // Le test clique sur un élément en position 3

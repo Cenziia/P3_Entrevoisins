@@ -24,7 +24,7 @@ Lien du projet : **[https://github.com/Cenziia/P3_Entrevoisins](https://github.c
 
 Si vous avez téléchargé le dossier ZIP, il vous faudra extraire son contenu.
 
-## Importer le projet dans Android Studio
+## Importer le projet dans Android Studio depuis le dossier ZIP
 
 Après avoir ouvert Android Studio, cliquez sur **"File"** > **"Open"**, ou **"File"** > **"New"** > **"Import"**, puis sélectionnez le dossier.
 

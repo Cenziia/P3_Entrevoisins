@@ -36,6 +36,6 @@ Choisissez votre émulateur (**1**), puis cliquez sur **"Run"** (**2**).
 
 ![run](/images/run.png)
 
-##### Et voilà, l'application est lancée !
+## Et voilà, l'application est lancée !
 
 ![project](/images/project.PNG)

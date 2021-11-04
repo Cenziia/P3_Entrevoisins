@@ -26,7 +26,6 @@ public interface NeighbourApiService {
      * Gets a neighbour
      * @param neighbour
      */
-    //void getNeighbourProfile(Neighbour neighbour);
 
     /**
      * Create a neighbour
@@ -38,7 +37,6 @@ public interface NeighbourApiService {
      * Add a neighbour to my Favorites
      * @param neighbour
      */
-   // void addFavoriteNeighbour(Neighbour neighbour);
 
     /**
      * Get all my Favorite Neighbours
@@ -47,16 +45,9 @@ public interface NeighbourApiService {
     List<Neighbour> getFavoriteNeighbours();
 
     /**
-     * Remove a neighbour from my Favorites
+     * Update my neighbour's status
      * @param neighbour
      */
-   // void removeFavoriteNeighbour(Neighbour neighbour);
-
-    /**
-     *
-     * @param neighbour
-     */
-    //void changeFavoriteNeighbour(Neighbour neighbour);
     void updateNeighbour(Neighbour neighbour);
 
 }

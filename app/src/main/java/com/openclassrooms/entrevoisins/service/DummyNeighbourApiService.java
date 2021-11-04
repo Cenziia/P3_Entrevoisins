@@ -33,10 +33,6 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      * {@inheritDoc}
      * @param neighbour
      */
-   /* @Override
-    public void getNeighbourProfile(Neighbour neighbour) {
-        neighbours.get(neighbours.indexOf(neighbour));
-    }*/
 
     /**
      * {@inheritDoc}
@@ -48,49 +44,14 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.add(neighbour);
     }
 
-
-/*
-    /**
-     * {@inheritDoc}
-     *
-     * @param neighbour
-     */
-   /* @Override
-    public void changeFavoriteNeighbour(Neighbour neighbour) {
-        neighbour.setFavorite(!neighbour.getFavorite());
-    }*/
-
     /**
      * {@inheritDoc}
      *
      */
-    /*@Override
-    public List<Neighbour> getFavoriteNeighbours() {
-        List<Neighbour> favoriteNeighboursList = new ArrayList<>();
-        for (Neighbour i : neighbours) {
-            if (i.getFavorite() == true) {
-                favoriteNeighboursList.add(i);
-            }
-        }
-
-        System.out.println(favoriteNeighboursList);
-        return favoriteNeighboursList;
-    }*/
-/*
-    /**
-     * {@inheritDoc}
-     *
-     * @param neighbour
-     */
-    /*@Override
-    public void removeFavoriteNeighbour(Neighbour neighbour) {
-        neighbour.setFavorite(false);
-    }*/
 
     @Override
     public List<Neighbour> getFavoriteNeighbours() {
         List<Neighbour> favoriteNeighbourList = new ArrayList<>();
-        //List<Neighbour>neighbours = getNeighbours();
         for (Neighbour i : neighbours) {
             if  (i.getFavorite()) {
                 System.out.println(i);

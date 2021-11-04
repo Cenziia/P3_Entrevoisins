@@ -59,8 +59,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(v.getContext(), ProfileNeighbourActivity.class);
-                //intent.putExtra("neighbour", neighbour);
                 v.getContext().startActivity(ProfileNeighbourActivity.newInstance(v.getContext(), neighbour));
 
 
@@ -73,11 +71,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     public int getItemCount() {
         return mNeighbours.size();
     }
-
-    /*@Override
-    public long getItemId(int position) {
-        return Neighbour.getId();
-    }*/
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {

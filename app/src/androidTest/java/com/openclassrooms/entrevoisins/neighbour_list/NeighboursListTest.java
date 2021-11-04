@@ -91,15 +91,8 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighbourList_clickOnNeighbourAction_shouldOpenNeighbourProfileActivity() {
-        // GIVEN - WHEN - THEN à noter
-        // Le test récupère la liste des voisins
-        //neighboursList = mApiService.getNeighbours();
-        // Le test clique sur un élément en position 3
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3, click()));
-        //System.out.println(withItemCount(ITEMS_COUNT-11));
-        // Puis il vérifie qu'un nom est affiché dans le profil (via l'id)
-        // Cela confirme l'ouverture de la page de détails
         onView(withId(R.id.neighbour_page_name_txt)).check(matches(isDisplayed()));
     }
 
@@ -110,13 +103,8 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighbourList_toNeighbourProfileActivity_shouldCheckIfSameName() {
-        // Le test récupère la position de l'élément sélectionné
-        //Neighbour neighbour = neighboursList.get(3);
-        // Le test clique sur un élément
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(3 , click()));
-        // Puis il vérifie qu'un nom est affiché dans le profil (via l'id)
-        // Cela confirme l'ouverture de la page de détails
         onView(withId(R.id.neighbour_page_name_txt)).check(matches(withText(mApiService.getNeighbours().get(3).getName())));
     }
 
@@ -125,20 +113,11 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighbourList_onFavoritesTab_shouldShowOnlyFavoriteNeighbours() {
-        // Le test récupère le voisin en position 2
-        //Neighbour neighbour = neighboursList.get(2);
-        // Le test clique sur le voisin en position 2
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
-        // Le test clique sur le bouton de mise en favoris sur le profil
         onView(ViewMatchers.withId(R.id.neighbour_page_fav_btn)).perform(click());
-        // Le test revient en arrière en cliquant sur le bouton de retour
         onView(ViewMatchers.withId(R.id.neighbour_page_back_btn)).perform(click());
-        // Le test clique sur l'onglet Favorites
         onView(ViewMatchers.withId(R.id.main_content)).perform(swipeLeft());
-        // Le test vérifie que ce sont des éléments de la liste des favoris
         onView(ViewMatchers.withId(R.id.list_favorites)).check(withItemCount(1));
-        //System.out.println(neighboursList.get(2));
-        //System.out.println(mApiService.getFavoriteNeighbours());
     }
 }

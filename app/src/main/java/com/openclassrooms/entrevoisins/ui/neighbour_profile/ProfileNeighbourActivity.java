@@ -63,7 +63,6 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_neighbour);
         ButterKnife.bind(this);
         mApiService = DI.getNeighbourApiService();
-        //neighbour = mApiService.getNeighbours().get(0);
         Intent intent =getIntent();
         Neighbour neighbour = (Neighbour) intent.getParcelableExtra(NEIGHBOUR_STRING);
 
@@ -91,22 +90,10 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         mFavBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if (neighbour.getFavorite() == false)
-                    mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
-                    mApiService.addFavoriteNeighbour(neighbour);*/
                 changeFavorite(neighbour);
             }
 
         });
-       /* mFavBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (neighbour.getFavorite() == false) {
-                    mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_border_24));
-                }
-            }
-        });*/
-
     }
 
     public void setFavoriteImage(Neighbour neighbour) {
@@ -119,25 +106,15 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
     }
 
     public void changeFavorite(Neighbour neighbour) {
-        //return neighbour.getFavorite() == true;
         if (neighbour.getFavorite() == false) {
             mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
-            //return neighbour.getFavorite() == true;
             neighbour.setFavorite(true);
 
         } else {
             mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_border_24));
-            //return neighbour.getFavorite() == false;
             neighbour.setFavorite(false);
-           // mApiService.changeFavoriteNeighbour(neighbour);
         }
-        //neighbour.setFavorite(true);
         mApiService.updateNeighbour(neighbour);
-
-       System.out.println(mApiService.getFavoriteNeighbours());
-//System.out.println(mApiService.getNeighbours());
-       // System.out.println(mApiService.getFavoriteNeighbours());
-        //System.out.println(neighbour.getFavorite());
     }
 
 }

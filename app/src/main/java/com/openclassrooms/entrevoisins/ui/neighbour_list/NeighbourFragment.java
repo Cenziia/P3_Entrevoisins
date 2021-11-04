@@ -34,19 +34,6 @@ public class NeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
-    //private List<Neighbour> mFavorites;
-   /* @BindView(R.id.tabItem)
-    TabItem neighbourTab;
-    @BindView(R.id.tabItem2)
-    TabItem favoritesTab;
-    //TabItem mTabItem = getId()findViewById(R.id.tabItem);
-    @BindView(R.id.tabs)
-    TabLayout mTabLayout;
-
-    /**
-     * Create and return a new instance
-     * @return @{@link NeighbourFragment}
-     */
     public static NeighbourFragment newInstance() { //String section = variable qui va identifier l'onglet qui a été cliqué
         NeighbourFragment fragment = new NeighbourFragment();
         return fragment;
@@ -67,37 +54,6 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         return view;
-
-
-/*
-        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                mViewPager.setCurrentItem(tab.getPosition());
-                if (mTabLayout.getSelectedTabPosition() == 1) {
-                    //mNeighbours = mApiService.getFavoriteNeighbours();
-                    System.out.println("Liste des favoris");
-                } else {
-                    //mNeighbours = mApiService.getNeighbours();
-                    System.out.println("Liste des voisins");
-                }
-                mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
-                System.out.println("YEEEES");
-                System.out.println(mTabLayout.getSelectedTabPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-    }*/
     }
 
 
@@ -106,33 +62,8 @@ public class NeighbourFragment extends Fragment {
      * Init the List of neighbours
      */
     private void initList() {
-
-        /*if () {
-            //(R.id.tabItem)
-            mNeighbours = mApiService.getNeighbours();
-        } else if (getView().findViewById(R.id.tabItem2)) {
-            mNeighbours = mApiService.getFavoriteNeighbours();
-        }*/
-
-        //if () {
-
        mNeighbours = mApiService.getNeighbours();
-
-
-        //}
-        //else if () {
-           //mNeighbours = mApiService.getFavoriteNeighbours();
-        //}*/
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
-
-           /* for (Neighbour i : mNeighbours) {
-                if (i.getFavorite()) {
-                    System.out.println(i.getFavorite());
-                    favoriteNeighbourList.add(i);
-                }
-            }
-            System.out.println(mNeighbours);
-            return favoriteNeighbourList;*/
         }
 
 
@@ -163,17 +94,4 @@ public class NeighbourFragment extends Fragment {
         mApiService.deleteNeighbour(event.neighbour);
         initList();
     }
-
-    /*@Subscribe
-    public void onGetNeighbourProfile(GetNeighbourProfileEvent event) {
-        //mApiService.getNeighbourProfile(event.neighbour);
-        new MyNeighbourRecyclerViewAdapter.GetNeighbourProfile(event);
-    }*/
-
-    /*@Subscribe
-    public void onSetFavoritesList(SetFavoritesList event) {
-        mApiService.getFavoriteNeighbours();
-        initList();
-    }*/
-
 }

@@ -31,7 +31,6 @@ int tabsCount;
                 System.out.println("Fragment null");
                 return null;
         }
-        //return NeighbourFragment.newInstance();
     }
 
     /**

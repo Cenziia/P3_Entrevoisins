@@ -42,10 +42,6 @@ public class ListNeighbourActivity extends AppCompatActivity {
     Toolbar mToolbar;
     @BindView(R.id.container)
     ViewPager mViewPager;
-   /* @BindView(R.id.tabItem)
-    TabItem neighbourTab;
-    @BindView(R.id.tabItem2)
-    TabItem favoritesTab;*/
 
     ListNeighbourPagerAdapter mPagerAdapter;
 
@@ -69,15 +65,12 @@ public class ListNeighbourActivity extends AppCompatActivity {
                 mViewPager.setCurrentItem(tab.getPosition());
                 if (mTabLayout.getSelectedTabPosition() == 1) {
                     mNeighbours = mApiService.getFavoriteNeighbours();
-                    //mApiService.getFavoriteNeighbours();
 
                     System.out.println("Liste des favoris");
                 } else {
                     mNeighbours = mApiService.getNeighbours();
-                    //mApiService.getNeighbours();
                     System.out.println("Liste des voisins");
                 }
-                //mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
                 System.out.println("YEEEES");
                 System.out.println(mTabLayout.getSelectedTabPosition());
             }
@@ -100,9 +93,4 @@ public class ListNeighbourActivity extends AppCompatActivity {
         AddNeighbourActivity.navigate(this);
     }
 
-   /* @Subscribe
-    public void onGetNeighbourProfile(GetNeighbourProfileEvent event) {
-
-        new MyNeighbourRecyclerViewAdapter.GetNeighbourProfile(event);
-    }*/
 }

@@ -2,7 +2,6 @@ package com.openclassrooms.entrevoisins.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 
 import java.util.Objects;
 
@@ -11,29 +10,44 @@ import java.util.Objects;
  */
 public class Neighbour implements Parcelable {
 
-    /** Identifier */
+    /**
+     * Identifier
+     */
     private long id;
 
-    /** Full name */
+    /**
+     * Full name
+     */
     private String name;
 
-    /** Avatar */
+    /**
+     * Avatar
+     */
     private String avatarUrl;
 
-    /** Adress */
+    /**
+     * Adress
+     */
     private String address;
 
-    /** Phone number */
+    /**
+     * Phone number
+     */
     private String phoneNumber;
 
-    /** About me */
+    /**
+     * About me
+     */
     private String aboutMe;
 
-    /** Favorite */
+    /**
+     * Favorite
+     */
     private boolean favorite;
 
     /**
      * Constructor
+     *
      * @param id
      * @param name
      * @param avatarUrl
@@ -119,9 +133,13 @@ public class Neighbour implements Parcelable {
         this.aboutMe = aboutMe;
     }
 
-    public boolean getFavorite() {return this.favorite; }
+    public boolean getFavorite() {
+        return this.favorite;
+    }
 
-    public void setFavorite(boolean favorite) {this.favorite = favorite; }
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/neighbour_page_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <ImageView
+    <ImageView
         android:id="@+id/neighbour_page_img"
         android:layout_width="match_parent"
         android:layout_height="270dp"
@@ -16,21 +15,21 @@
         android:scaleType="centerCrop"
         android:contentDescription="@string/neighbour_picture"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/image_test"/>
+        tools:src="@drawable/image_test" />
 
-        <ImageButton
-            android:id="@+id/neighbour_page_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/back_button"
-            android:scaleX="1.3"
-            android:scaleY="1.3"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
-            app:layout_constraintTop_toTopOf="@id/neighbour_page_img" />
+    <ImageButton
+        android:id="@+id/neighbour_page_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/back_button"
+        android:scaleX="1.3"
+        android:scaleY="1.3"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
+        app:layout_constraintTop_toTopOf="@id/neighbour_page_img" />
 
 
     <android.support.design.widget.FloatingActionButton
@@ -50,7 +49,7 @@
         tools:src="@drawable/ic_outline_star_border_24" />
 
 
-        <TextView
+    <TextView
         android:id="@+id/neighbour_page_title_name_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,166 +59,166 @@
         app:layout_constraintStart_toStartOf="@id/neighbour_page_img"
         android:layout_marginBottom="25dp"
         android:textSize="34sp"
-        tools:text="Caroline"/>
+        tools:text="Caroline" />
 
-<ScrollView
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:orientation="vertical"
-    app:layout_constraintTop_toBottomOf="@id/neighbour_page_img"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/neighbour_page_details_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginVertical="12dp">
-
-        <TextView
-            android:id="@+id/neighbour_page_name_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="17dp"
-            android:textSize="23sp"
-            android:textStyle="bold"
-            tools:text="Caroline" />
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/neighbour_page_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:paddingTop="105dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="66dp"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/neighbour_page_address_linear_layout"
+            <android.support.v7.widget.CardView
+                android:id="@+id/neighbour_page_details_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="15dp">
-
-                <ImageView
-                    android:id="@+id/neighbour_page_address_ic"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/location_icon"
-                    android:src="@drawable/ic_baseline_location_on_24" />
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="12dp">
 
                 <TextView
-                    android:id="@+id/neighbour_page_address_txt"
+                    android:id="@+id/neighbour_page_name_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="2dp"
-                    android:textSize="15sp"
-                    tools:text="address" />
+                    android:layout_margin="17dp"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    tools:text="Caroline" />
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:paddingTop="105dp" />
 
-            <LinearLayout
-                android:id="@+id/neighbour_page_phone_linear_layout"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="66dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/neighbour_page_address_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="15dp">
+
+                        <ImageView
+                            android:id="@+id/neighbour_page_address_ic"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/location_icon"
+                            android:src="@drawable/ic_baseline_location_on_24" />
+
+                        <TextView
+                            android:id="@+id/neighbour_page_address_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="2dp"
+                            android:textSize="15sp"
+                            tools:text="address" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/neighbour_page_phone_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="15dp">
+
+                        <ImageView
+                            android:id="@+id/neighbour_page_phone_ic"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/phone_icon"
+                            android:src="@drawable/ic_baseline_phone_24" />
+
+                        <TextView
+                            android:id="@+id/neighbour_page_phone_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="2dp"
+                            android:textSize="15sp"
+                            tools:text="phone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/neighbour_page_link_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="15dp">
+
+                        <ImageView
+                            android:id="@+id/neighbour_page_link_ic"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/link_icon"
+                            android:src="@drawable/ic_baseline_language_24" />
+
+                        <TextView
+                            android:id="@+id/neighbour_page_link_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="2dp"
+                            android:textSize="15sp"
+                            tools:text="link" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/neighbour_page_about_me_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:orientation="horizontal"
-                android:paddingStart="15dp">
-
-                <ImageView
-                    android:id="@+id/neighbour_page_phone_ic"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/phone_icon"
-                    android:src="@drawable/ic_baseline_phone_24" />
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="12dp">
 
                 <TextView
-                    android:id="@+id/neighbour_page_phone_txt"
+                    android:id="@+id/neighbour_page_about_me_title_txt"
+                    android:text="@string/about_me"
+                    android:textStyle="bold"
+                    android:textSize="23sp"
+                    android:layout_margin="17dp"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="2dp"
-                    android:textSize="15sp"
-                    tools:text="phone" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/neighbour_page_link_linear_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="15dp"
-                android:orientation="horizontal"
-                android:paddingStart="15dp">
-
-                <ImageView
-                    android:id="@+id/neighbour_page_link_ic"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/link_icon"
-                    android:src="@drawable/ic_baseline_language_24" />
+                    android:paddingTop="105dp"
+                    android:background="@drawable/border" />
 
                 <TextView
-                    android:id="@+id/neighbour_page_link_txt"
+                    android:id="@+id/neighbour_page_about_me_txt"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="2dp"
-                    android:textSize="15sp"
-                    tools:text="link" />
+                    tools:text="@tools:sample/lorem[25]" />
 
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-    android:id="@+id/neighbour_page_about_me_card_view"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="12dp">
-
-            <TextView
-                android:id="@+id/neighbour_page_about_me_title_txt"
-                android:text="@string/about_me"
-                android:textStyle="bold"
-                android:textSize="23sp"
-                android:layout_margin="17dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="105dp"
-        android:background="@drawable/border"/>
-
-            <TextView
-                android:id="@+id/neighbour_page_about_me_txt"
-                android:layout_marginTop="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="@tools:sample/lorem[25]" />
-
-</android.support.v7.widget.CardView>
-
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

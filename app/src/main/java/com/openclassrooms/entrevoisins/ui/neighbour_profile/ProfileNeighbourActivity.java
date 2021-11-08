@@ -45,10 +45,10 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
     public TextView mAboutMeTxt;
 
     private NeighbourApiService mApiService;
-    private static String NEIGHBOUR_STRING = "neighbour";
-    private static String TAG = ProfileNeighbourActivity.class.getSimpleName();
+    private static final String NEIGHBOUR_STRING = "neighbour";
+    private static final String TAG = ProfileNeighbourActivity.class.getSimpleName();
 
-    public static  Intent newInstance(final Context context, final Neighbour neighbour) {
+    public static Intent newInstance(final Context context, final Neighbour neighbour) {
         Log.d(TAG, "> newInstance");
         Intent intent = new Intent(context, ProfileNeighbourActivity.class);
         Log.d(TAG, "neighbour: " + neighbour);
@@ -63,7 +63,7 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_neighbour);
         ButterKnife.bind(this);
         mApiService = DI.getNeighbourApiService();
-        Intent intent =getIntent();
+        Intent intent = getIntent();
         Neighbour neighbour = (Neighbour) intent.getParcelableExtra(NEIGHBOUR_STRING);
 
         Glide.with(mImage.getContext())
@@ -92,15 +92,13 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
             public void onClick(View v) {
                 changeFavorite(neighbour);
             }
-
         });
     }
 
     public void setFavoriteImage(Neighbour neighbour) {
         if (neighbour.getFavorite()) {
             mFavBtn.setImageDrawable(getResources().getDrawable(R.drawable.ic_outline_star_24));
-        }
-        else {
+        } else {
             mFavBtn.setImageDrawable(getResources().getDrawable(R.drawable.ic_outline_star_border_24));
         }
     }
@@ -109,12 +107,10 @@ public class ProfileNeighbourActivity extends AppCompatActivity {
         if (neighbour.getFavorite() == false) {
             mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_24));
             neighbour.setFavorite(true);
-
         } else {
             mFavBtn.setImageDrawable(getDrawable(R.drawable.ic_outline_star_border_24));
             neighbour.setFavorite(false);
         }
         mApiService.updateNeighbour(neighbour);
     }
-
 }

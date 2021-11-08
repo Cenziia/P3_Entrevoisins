@@ -1,9 +1,8 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -55,11 +54,8 @@ public class FavoriteFragment extends Fragment {
      * Init the List of neighbours
      */
     private void initList() {
-
         mFavorites = mApiService.getFavoriteNeighbours();
-
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavorites));
-
     }
 
     @Override
@@ -82,6 +78,7 @@ public class FavoriteFragment extends Fragment {
 
     /**
      * Fired if the user clicks on a delete button
+     *
      * @param event
      */
     @Subscribe

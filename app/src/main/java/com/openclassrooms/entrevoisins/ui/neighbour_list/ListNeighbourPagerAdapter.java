@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 
 public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
-int tabsCount;
+    int tabsCount;
 
     public ListNeighbourPagerAdapter(FragmentManager fm, int TabsCount) {
         super(fm);
@@ -15,6 +15,7 @@ int tabsCount;
 
     /**
      * getItem is called to instantiate the fragment for the given page.
+     *
      * @param position
      * @return
      */
@@ -22,19 +23,17 @@ int tabsCount;
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                System.out.println("Fragment Neighbour OK");
                 return NeighbourFragment.newInstance();
             case 1:
-                System.out.println("Fragment Favorite OK");
                 return FavoriteFragment.newInstance();
             default:
-                System.out.println("Fragment null");
                 return null;
         }
     }
 
     /**
      * get the number of pages
+     *
      * @return
      */
     @Override
